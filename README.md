@@ -1,11 +1,27 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Javascript-Timed-Quiz
 
-## Your Task
+## Timed Quizzes
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+A timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code. 
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
- 
+### How to play?
+
+When the user loads the page, you are greeted with a container where the quiz questions and choices will be. 
+
+It is timed, So you will have a total of 30 seconds to complete the quiz. There are 4 questions in total.
+
+When you click on the start button, the timer will start counting down from 30 and your first question will appear with the option of 4 choices to choose from. Each question you answer correctly, your score will be incremented by 1. Each time you answer incorrectly, 5 seconds will be deducted from your time. If the time runs out before you can finish, you won't be given the opportunity to answer the remaining questions.
+
+The quiz will clear and you will be able to store your results with your name and later if you would like to take the quiz again, you can compare the results from other attempts. Good Luck!
+
+How to use?
+This is a timed quiz on the subject Javascript.
+
+When the user loads the page, you are greeted with a container where the quiz questions and choices will be. It is timed, So you will have a total of 30 seconds to complete the quiz. There are 4 questions in total, all pertaining to javascript.
+
+When you click on the start button, the timer will start counting down from 30 and your first question will appear with the option of 4 choices to choose from. Each question you answer correctly, your score will be incremented by 1. Each time you answer incorrectly, 5 seconds will be deducted from your time. If the time runs out before you can finish, you won't be given the opportunity to answer the remaining questions, so be sharp and think as quikcly as you can.
+
+Once the quiz is finished whether you answered all the available questions or the time has run out, you will be prompted to give a user name. If you don't type a username, you will be alerted to use some sort of user name or you wont be able to store your results in the highscore window. Once you enter your name, press submit and you will be brought to the high scores window where you can compare previous quiz attempts.
 
 ## User Story
 
