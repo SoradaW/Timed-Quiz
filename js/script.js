@@ -14,57 +14,6 @@ const body = document.getElementById("body");
 
 
 
-var questionsArray = [
-  //question one
-  {
-    question: "What does parseInt do?",
-
-    choice1: "parses a string argument and returns a floating point number.",
-    choice2: "evaluates JavaScript code represented as a string.",
-    choice3:"parses a string argument and returns an integer of the specified radix",
-    choice4: "it pops up a prompt window in your browser.",
-
-    answer: "parses a string argument and returns an integer of the specified radix",
-  },
-
-  //question 2
-
-  {
-    question: "how do you declare a variable?",
-
-    choice1: "variable name = value",
-    choice2: "var name = value;", 
-    choice3: "var.NAME = value;",
-    choice4: "var = name.value;",
-
-    answer: "var name = value;",
-  },
-
-  //question 2
-
-  {
-    question: "which of these will evaluate to the number 20?",
-
-    choice1: "var twenty = 10 + 10; ",
-    choice2: "var twenty = '10' + '10'; ",
-    choice3: "var twenty = 10 + '10'; ",
-    choice4: "twenty = '20' ",
-
-    answer: "var twenty = 10 + 10; ",
-  },
-  //question 4
-  {
-    question: "what is the proper syntax for this function?",
-
-    choice1: "myfunction() (console.log('Hello World!'); ",
-    choice2: "function MYFUNCTION {console.log('Hello World!'}; ",
-    choice3: "function myFunction() {console.log('Hello World!')}; ",
-    choice4: "function() = myFunction {console.log(12)} ",
-
-    answer: "function myFunction() {console.log('Hello World!')}; ",
-  },
-];
-
 var score = 0;
 var timer = 20;
 

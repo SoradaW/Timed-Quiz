@@ -8,11 +8,11 @@ A timed coding quiz with multiple-choice questions. This app will run in the bro
 
 * When the user loads the page, you are greeted with a container where the quiz questions and choices will be. 
 
-* It is timed, So you will have a total of 30 seconds to complete the quiz. There are 4 questions in total.
+* It is timed, So you will have a total of 30 seconds to complete the quiz. There are 5 questions in total.
 
 * When you click on the start button, the timer will start counting down from 30 and your first question will appear with the option of 4 choices to choose from. 
   - Each question you answer correctly, your score will be incremented by 1. 
-  -  Each time you answer incorrectly, 5 seconds will be deducted from your time.
+  -  Each time you answer incorrectly, 3 seconds will be deducted from your time.
   - If the time runs out before you can finish, you won't be given the opportunity to answer the remaining questions.
 
 * Once the quiz is finished whether you answered all the available questions or the time has run out, you will be prompted to give a user name. 
