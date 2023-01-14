@@ -12,7 +12,7 @@ var board = document.getElementById("scoresContainer");
 const body = document.getElementById("body");
 
 
-
+//! Questions array
 
 var score = 0;
 var timer = 20;
