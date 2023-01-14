@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Timed Quiz</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
@@ -35,23 +37,26 @@
             <div class="info">
               5. You cannot exit from the quiz while you are playing.
             </div>
+            <p>
+              GOOD LUCK!
+            </p>
           </div>
+          <!--Start/Exit button-->
+          <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart start-btn">Start</button>
         </div>
-        <p>
-          GOOD LUCK!
-        </p>
-        <!--Start button-->
-        <button id="start">Start</button>
+        </div>
       </div>
 
       <!--Quiz Box-->
       <div class="quiz-box">
         <header> 
-        <h1>Javascript Timed Quiz</h1>
-        <div class="timer">
-          <div class="time-text">Time:</div>
-          <div class="timer-sec">30</div>
-        </div>
+          <h1 class="title">Javascript Timed Quiz</h1>
+          <div class="timer">
+            <div class="time-text">Time:</div>
+            <div class="timer-sec">30</div>
+          </div>
         </header>
         <section>
           <div id="questions" class="hide question-text">
@@ -65,22 +70,23 @@
 
       <!--Footer of quiz box-->
       <footer>
-        <div class="total-ques">
+        <div class="total-que">
           <!--Inserted question count down from JS here-->
         </div>
+        <button class="next-btn">Next</button>
       </footer>
     </div>
 
       <!--Result Box-->
       <div id="end-screen" class="result-box">
-        <h2>All done! You've completed the Quiz!</h2>
+        <h2 class="complete-text">You've completed the Quiz!</h2>
         <p>Your final score is <span id="final-score">
           <!--Inserted Score Result from JS here-->
         </span>.</p>
 
         <p>
           Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
+          <button class="submit">Submit</button>
         </p>
       </div>
 

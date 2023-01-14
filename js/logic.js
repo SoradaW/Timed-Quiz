@@ -1,5 +1,5 @@
 // Selecting all queries elements
-var startButton = document.querySelector("#start");
+var startButton = document.querySelector(".start-btn");
 var infoBox = document.querySelector(".info-box");
 var quizBox = document.querySelector(".quiz-box");
 var resultBox = document.querySelector(".result-box");
@@ -21,18 +21,18 @@ function displayQuestion(i) {
   // Creaing a new span and div tags for questions and choices and passing the value using array index
   var questionTag = "<span>" + questionsArr[i].qNum + questionsArr[i].question + "</span>";
   var choicesTag = 
-  "<div class="option"><span>" + questions[i].options[0] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].options[1] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].options[2] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].options[3] + "</span></div>" ;
+  "<div class="option"><span>" + questions[i].choices[0] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].choices[1] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].choices[2] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].choices[3] + "</span></div>" ;
   // Adding new span tag inside question tag
   questionText.innerHTML = questionTag;
   // Adding new div tag inside choice tag
   choices.innerHTML = choicesTag;
 
   const option = choices.querySelectorAll(".choices");
-  // Set onclick attribute to all available options
-  for (i = 0; i < choices.clientHeight; i++){
+  // Set onclick attribute to all available choices
+  for (i = 0; i < choices.length; i++){
     choices[i].setAttribute("onclick", "choicesSelected(this)");
   }
 }
@@ -60,7 +60,7 @@ function choicesSelected(answer){
     }
   }
   for (i = 0; i < allChoices; i++){
-    // Once user select their choice then disabled all options
+    // Once user select their choice then disabled all choices
     choices.children[i].classList.add("disabled"); 
   }
 }

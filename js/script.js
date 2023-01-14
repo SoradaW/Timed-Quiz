@@ -1,4 +1,25 @@
 //! Attach event listener to start button to call startGame function on click
+//selecting all required elements
+const start_btn = document.querySelector(".start_btn button");
+const info_box = document.querySelector(".info_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+// if startQuiz button clicked
+start_btn.onclick = ()=>{
+    info_box.classList.add("activeInfo"); //show info box
+}
+// if exitQuiz button clicked
+exit_btn.onclick = ()=>{
+    info_box.classList.remove("activeInfo"); //hide info box
+}
+----------------------
+
 // if continueQuiz button clicked
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
@@ -116,6 +137,7 @@ function optionSelected(answer){
     }
     next_btn.classList.add("show"); //show the next button if user selected any option//! did not have Need to add auto next
 }
+
 function showResult(){
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
@@ -135,6 +157,7 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
 }
+
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
@@ -163,6 +186,7 @@ function startTimer(time){
         }
     }
 }
+//! do not need
 function startTimerLine(time){
     counterLine = setInterval(timer, 29);
     function timer(){
@@ -173,6 +197,7 @@ function startTimerLine(time){
         }
     }
 }
+
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
