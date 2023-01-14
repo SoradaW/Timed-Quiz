@@ -1,20 +1,20 @@
 //! Attach event listener to start button to call startGame function on click
 //selecting all required elements
-const start_btn = document.querySelector(".start_btn button");
+const start_btn = document.querySelector(".start_btn button");//!
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
-const continue_btn = info_box.querySelector(".buttons .restart");
+const continue_btn = info_box.querySelector(".buttons .restart");//!
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
-const time_line = document.querySelector("header .time_line");
+const time_line = document.querySelector("header .time_line");//!nope
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-// if startQuiz button clicked
+// if startQuiz button clicked //!
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
 }
-// if exitQuiz button clicked
+// if exitQuiz button clicked //!
 exit_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
 }
@@ -33,10 +33,10 @@ let timeValue =  15;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
-let counter;
-let counterLine;
-let widthValue = 0;
-//!this shold be go back and clear high score
+let counter;//!
+let counterLine;//!
+let widthValue = 0;//!
+
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 // if restartQuiz button clicked
@@ -50,10 +50,10 @@ restart_quiz.onclick = ()=>{
     widthValue = 0;
     showQuetions(que_count); //calling showQestions function
     queCounter(que_numb); //passing que_numb value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
+    clearInterval(counter); //clear counter//!
+    clearInterval(counterLine); //clear counterLine//!
     startTimer(timeValue); //calling startTimer function
-    startTimerLine(widthValue); //calling startTimerLine function
+    startTimerLine(widthValue); //calling startTimerLine function//!
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
 }
@@ -63,7 +63,6 @@ quit_quiz.onclick = ()=>{
 }
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
-//! this should be auto click for next question
 // if Next Que button clicked
 next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){ //if question count is less than total question length
@@ -106,6 +105,7 @@ function showQuetions(index){
 // creating the new div tags which for icons //! tick / x options
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
 //if user clicked on option
 function optionSelected(answer){
     clearInterval(counter); //clear counter
@@ -127,7 +127,7 @@ function optionSelected(answer){
         for(i=0; i < allOptions; i++){
             if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
                 option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option//!
                 console.log("Auto selected correct answer.");
             }
         }
@@ -135,7 +135,7 @@ function optionSelected(answer){
     for(i=0; i < allOptions; i++){
         option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
-    next_btn.classList.add("show"); //show the next button if user selected any option//! did not have Need to add auto next
+    next_btn.classList.add("show"); //show the next button if user selected any option
 }
 
 function showResult(){
