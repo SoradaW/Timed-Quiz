@@ -113,11 +113,4 @@ function choicesSelected(answer){
   nextBtn.classList.add("show"); // Show the "Next" button when user selected any choices
 }
 
-function showResult() {
-  infoBox.classList.remove("activeInfo"); // Hide info box
-  quizBox.classList.remove("activeQuiz"); // Hide quiz box
-  resultBox.classList.add("activeResult"); // Show result box
-  const scoreText = resultBox.querySelector(".final-score");
 
-  //
-}
