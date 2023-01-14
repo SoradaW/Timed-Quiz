@@ -5,7 +5,7 @@ var quizBox = document.querySelector(".quiz-box");
 var resultBox = document.querySelector(".result-box");
 var choices = document.querySelector(".choices");
 var timeText = document.querySelector(".timer .time-text");
-var timeCount = document.querySelector(".timer .timer-sec")
+var timeCount = document.querySelector(".timer .timer-sec");
 
 // Attach event listener to start button to call startGame function on click
 startButton.addEventListener("click", startGame);
@@ -15,20 +15,30 @@ var timerValue = 30;
 var qNum = 1;
 var userScore = 0;
 
+// Getting questions and choices for array
+function displayQuestion(i) {
+  const questionText = document.querySelector(".question-text")
+  // Creaing a new span and div tags for questions and choices and passing the value using array index
+  var questionTag = "<span>" + questionsArr[i].qNum + questionsArr[i].question + "</span>";
+  var choicesTag = 
+  "<div class="option"><span>" + questions[i].options[0] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].options[1] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].options[2] + "</span></div>" +
+  "<div class="option"><span>" + questions[i].options[3] + "</span></div>" ;
+  // Adding new span tag inside question tag
+  questionText.innerHTML = questionTag;
+  // Adding new div tag inside choice tag
+  choices.innerHTML = choicesTag;
 
-function displayQuestion() {
-  var object = questionsArr[questionNum];
-  var {question, choice1, choice2, choice3, choice4} = object
-  var choiceArr = [choice1, choice2, choice3, choice4];
-
-  questionTitle.textContent = question;
-
-  for (var i = 0; i < choiceArr.length; i++) {
-    var input = choiceText[i];
-    var choice = choiceArr[i];
-    input.innerHTML = choice;
+  const option = choices.querySelectorAll(".choices");
+  // Set onclick attribute to all available options
+  for (i = 0; i < choices.clientHeight; i++){
+    choices[i].setAttribute("onclick", "choicesSelected(this)");
   }
 }
+
+
+
 
 // startGame function is called when the start button is clicked
 function startGame() {
