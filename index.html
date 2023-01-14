@@ -16,23 +16,73 @@
 
     <div class="wrapper">
       <div id="start-screen" class="start">
-        <h1>Javascript Timed Quiz</h1>
+        <!--info box before start-->
+        <div class="info-box">
+          <div class="info-title"><span>Quiz Rules</span></div>
+          <div class="info-list">
+            <div class="info">
+              1. You will have only <span>30 seconds</span> to complete the quiz.
+            </div>
+            <div class="info">
+              2. There are 5 questions in total.
+            </div>
+            <div class="info">
+              3. You will get 20 points on your correct answer.
+            </div>
+            <div class="info">
+              4. The time will be deducted 3 seconds on every incorrect answer.
+            </div>
+            <div class="info">
+              5. You cannot exit from the quiz while you are playing.
+            </div>
+          </div>
+        </div>
         <p>
-          Try to answer the following code-related questions within the time
-          limit. Keep in mind that incorrect answers will penalize your
-          score/time by three seconds!
+          GOOD LUCK!
         </p>
-        <button id="start">Start Quiz</button>
+        <!--Start button-->
+        <button id="start">Start</button>
       </div>
 
+      <!--Quiz Box-->
+      <div class="quiz-box">
+        <header> 
+        <h1>Javascript Timed Quiz</h1>
+        <div class="timer">
+          <div class="time-text">Time:</div>
+          <div class="time-sec">30</div>
+        </div>
+        <div class="time-line"></div>
+        </header>
+      </div>
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices"></div>
       </div>
+      <section>
+        <div class="q-txt">
+          <!--Inserted questions from JS here-->
+        </div>
+        <div class="choices">
+          <!--Inserted answer choices from JS here-->
+        </div>
+      </section>
 
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
+      <!--Footer of quiz box-->
+      <footer>
+        <div class="total-q">
+          <!--Inserted question count down from JS here-->
+        </div>
+        <button class="next-btn">Next Question</button>
+      </footer>
+
+      <!--Result Box-->
+      <div id="end-screen" class="result-box">
+        <h2>All done! You've completed the Quiz!</h2>
+        <p>Your final score is <span id="final-score">
+          <!--Inserted Score Result from JS here-->
+        </span>.</p>
+
         <p>
           Enter initials: <input type="text" id="initials" max="3" />
           <button id="submit">Submit</button>
@@ -43,8 +93,9 @@
     </div>
 
     <script src="js/script.js"></script>
-
+    <!--Inside questions.js contained Questions and Answer choices only-->
     <script src="js/quesions.js"></script>
+    <!--Inside logic.js contained all Quiz code-->
     <script src="js/logic.js"></script>
   </body>
 </html>

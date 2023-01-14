@@ -1,7 +1,8 @@
-// Create varibles
+// Selecting all queries elements
 var startButton = document.querySelector("#start");
-var questionTitle = document.querySelector("#question-title");
-var choiceText = document.querySelectorAll("#choices"); //!!!!
+var infoBox = document.querySelector(".info-box");
+
+
 
 var questionNum = 0;
 var timerscore = 0;
