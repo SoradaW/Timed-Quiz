@@ -37,6 +37,33 @@ function displayQuestion(i) {
   }
 }
 
+// Create function when user clicked/chosen choices
+function choicesSelected(answer){
+  var userAnswer = answer.textContent; // User selected answer
+  var correctAnswer = questions[questionCount].answer; // Getting correct answer from array
+  const allChoices = choices.children.length; // Getting all choices values
+
+  if(userAnswer == correctAnswer){
+    // If user chosen correct answer +20 points
+    userScore += 20; // Adding score values 
+    answer.classList.add("correct"); // Adding green color to correct option using.classList.add 
+    console.log("Correct Answer");
+    console.log("Your correct answer = " + userScore);
+  } else {
+    answer.classList.add("incorrect"); // Adding red color to correct option using.classList.add 
+    console.log("Wrong Answer");
+    for (i = 0; i < allChoices; i++){
+      if(choices.children[i].textContent == correctAnswer){ // If there is an option which is matched to an array answer
+        choices.children[i].setAttribute("class", "choice correct"); // Adding green color to macthed option
+        console.log("Auto selected correct answer.");
+      }
+    }
+  }
+  for (i = 0; i < allChoices; i++){
+    // Once user select their choice then disabled all options
+    choices.children[i].classList.add("disabled"); 
+  }
+}
 
 
 
