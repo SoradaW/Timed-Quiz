@@ -1,11 +1,20 @@
 // Selecting all queries elements
 var startButton = document.querySelector("#start");
 var infoBox = document.querySelector(".info-box");
+var quizBox = document.querySelector(".quiz-box");
+var resultBox = document.querySelector(".result-box");
+var choices = document.querySelector(".choices");
+var timeText = document.querySelector(".timer .time-text");
+var timeCount = document.querySelector(".timer .timer-sec")
 
+// Attach event listener to start button to call startGame function on click
+startButton.addEventListener("click", startGame);
 
+var questionCount = 0;
+var timerValue = 30;
+var qNum = 1;
+var userScore = 0;
 
-var questionNum = 0;
-var timerscore = 0;
 
 function displayQuestion() {
   var object = questionsArr[questionNum];
@@ -30,8 +39,7 @@ function startGame() {
   
 }
 
-// Attach event listener to start button to call startGame function on click
-startButton.addEventListener("click", startGame);
+
 
 // Calls init() so that it fires when page opened
 init();
