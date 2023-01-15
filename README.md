@@ -17,7 +17,7 @@ A timed coding quiz with multiple-choice questions. This app will run in the bro
 
 * Once the quiz is finished whether you answered all the available questions or the time has run out, you will be prompted to give a user name. 
 
-* Once you enter your name, press submit and you will be brought to the high scores window where you can compare previous quiz attempts. GOOD LUCK!!!
+* Once you enter your name, press submit and you will be brought to the high scores window where you can compare previous quiz attempts.
 
 ## Mock-Up
 

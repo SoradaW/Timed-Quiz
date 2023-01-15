@@ -157,11 +157,11 @@ section .question-text{
   font-size: 25px;
   font-weight: 600;
 }
-section .choices{
+section .choices-list{
   padding: 20px 0px;
   display: block;   
 }
-section .choices .option{
+section .choices-list .option{
   background: aliceblue;
   border: 1px solid #84c5fe;
   border-radius: 5px;
@@ -174,29 +174,29 @@ section .choices .option{
   align-items: center;
   justify-content: space-between;
 }
-section .choices .option:last-child{
+section .choices-list .option:last-child{
   margin-bottom: 0px;
 }
-section .choices .option:hover{
+section .choices-list .option:hover{
   color: #004085;
   background: #cce5ff;
   border: 1px solid #b8daff;
 }
-section .choices .option.correct{
+section .choices-list .option.correct{
   color: #155724;
   background: #d4edda;
   border: 1px solid #c3e6cb;
 }
-section .choices .option.incorrect{
+section .choices-list .option.incorrect{
   color: #721c24;
   background: #f8d7da;
   border: 1px solid #f5c6cb;
 }
-section .choices .option.disabled{
+section .choices-list .option.disabled{
   pointer-events: none;
 }
-/*
-section .choices .option .icon{
+
+section .choices-list .option .icon{
   height: 26px;
   width: 26px;
   border: 2px solid transparent;
@@ -208,16 +208,16 @@ section .choices .option .icon{
   line-height: 24px;
 }
 
-.choices .option .icon.tick{
+.choices-list .option .icon.tick{
   color: #23903c;
   border-color: #23903c;
   background: #d4edda;
 }
-.choices .option .icon.cross{
+.choices-list .option .icon.cross{
   color: #a42834;
   background: #f8d7da;
   border-color: #a42834;
-}*/
+}
 
 footer{
   height: 60px;
