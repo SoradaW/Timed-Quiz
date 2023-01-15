@@ -1,12 +1,19 @@
 // Selecting all queries elements
-const startButton = info-box.document.querySelector(".start-btn .restart .buttons button");
+const startButton = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
-const exitBtn = info-box.document.querySelector(".buttons .quit")
+const exitBtn = info-box.querySelector(".buttons .quit");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const choices = document.querySelector(".choices");
 const timeText = document.querySelector(".timer .time-text");
 const timeCount = document.querySelector(".timer .timer-sec");
+
+const continueBtn = info-box.querySelector(".buttons .restart");
+
+// if startQuiz button clicked
+startBtn.onclick = ()=>{
+  infoBox.classList.add("activeInfo"); //show info box
+}
 
 // Attach event listener to start button to call startGame function on click
 //startButton.addEventListener("click", startGame);
@@ -47,7 +54,7 @@ quitQuiz.onclick = ()=> {
 }
 
 const nextBtn = document.querySelector("footer .next-btn");
-const bottomQuesCounter = document.querySelector("footer .total-que");
+const bottomQueCounter = document.querySelector("footer .total-que");
 
 // When Next button clicked
 nextBtn.onclick = ()=> {
@@ -113,4 +120,41 @@ function choicesSelected(answer){
   nextBtn.classList.add("show"); // Show the "Next" button when user selected any choices
 }
 
+function startTimer(time){
+  counter = setInterval(timer, 3000);
+  function timer(){
+    // Change hte value of timeCount with time value
+    timeCount.textContent = time; 
+    time--; // Decrement the time value
+    // If timer is les than 9
+    if(time < 9){
+    var addZero = timeCount.textContent;
+    timeCount.textContent = "0" + addZero; // Add 0 infront time value
+    }
+    // If timer is les than 0
+    if(time < 0){
+      clearInterval(counter); // Clear counter
+      timeText.textContent = "Time Out"; // Change time text to time out
+      const allChoices = choices.children.length; // Getting all choices
+      var correctAnswer = questions[qNum].answer; // Getting correct answer from array
+      for (i = 0; i < allChoices; i++){
+        // If there is an option matched an array answer
+        if(choices.children[i].textContent == correctAnswer){
+          choices.children[i].setAttribute("class", "choice correct"); // Adding green color to matched option
+          console.log("Time Out: Auto selected correct answer.");
+        }
+      }
+      // Once user select their choice then disabled all choices
+      for (i = 0; i < allChoices; i++){
+        choices.children[i].classList.add("disabled");
+      }
+      nextBtn.classList.add("show"); // Show the "Next" button when user selected any choices
+    }
+  }
+}
 
+function questionCounter(i){
+  // Create a new span tag and passing the question number and total question
+  var totalQueCount = "<span><p>" + i + "</p> of <p>" + questions.length + "</p> Questions</span>";
+  bottomQueCounter.innerHTML = totalQueCount; // Adding new span tag inside bottomQueCounter
+}
