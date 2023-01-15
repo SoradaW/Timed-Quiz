@@ -10,6 +10,7 @@ body {
   color: #fff;
   background: #563d7c;
 }
+.start-btn,
 .info-box,
 .quiz-box,
 .result-box{
@@ -28,6 +29,18 @@ body {
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
 }
+.start-btn button{
+  font-size: 25px;
+  font-weight: 500;
+  color: #007bff;
+  padding: 15px 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
 .info-box{
   width: 540px;
   background: #fff;
@@ -188,6 +201,7 @@ section .choices .option.incorrect{
 section .choices .option.disabled{
   pointer-events: none;
 }
+/*
 section .choices .option .icon{
   height: 26px;
   width: 26px;
@@ -199,6 +213,7 @@ section .choices .option .icon{
   transition: all 0.3s ease;
   line-height: 24px;
 }
+
 .choices .option .icon.tick{
   color: #23903c;
   border-color: #23903c;
@@ -208,7 +223,7 @@ section .choices .option .icon{
   color: #a42834;
   background: #f8d7da;
   border-color: #a42834;
-}
+}*/
 footer{
   height: 60px;
   padding: 0 30px;

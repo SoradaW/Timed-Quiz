@@ -1,34 +1,44 @@
 // Selecting all queries elements
 const startButton = document.querySelector(".start-btn button");
 const infoBox = document.querySelector(".info-box");
-const exitBtn = info-box.querySelector(".buttons .quit");
+const exitBtn = infoBox.querySelector(".buttons .quit");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 const choices = document.querySelector(".choices");
 const timeText = document.querySelector(".timer .time-text");
 const timeCount = document.querySelector(".timer .timer-sec");
 
-const continueBtn = info-box.querySelector(".buttons .restart");
+const continueBtn = infoBox.querySelector(".buttons .restart");
 
 // if startQuiz button clicked
-startBtn.onclick = ()=>{
-  infoBox.classList.add("activeInfo"); //show info box
+startButton.onclick = ()=>{
+  infoBox.classList.add("activeInfo"); // Show info box
 }
 
 // Attach event listener to start button to call startGame function on click
-//startButton.addEventListener("click", startGame);
-startButton.onclick = ()=>{
+// StartButton.addEventListener("click", startGame);
+/*startButton.onclick = ()=>{
   infoBox.classList.remove("activeInfo"); // Hide info box
-  quizBox.classList.add("activeInfo"); //Show quiz box
+  quizBox.classList.add("activeInfo"); // Show quiz box
   displayQuestion(0); // Call displayQuestion function
   startTimer(30); // Call startTimer fucntion
   questionCounter(1); // Passing 1 parameter to questionCounter
+}*/
+
+// If continus quiz button clicked
+continueBtn.onclick = () => {
+  infoBox.classList.remove("activeInfo");
+  quizBox.classList.add("activeQuiz");
+  displayQuestion(0);
+  questionCounter(1);
+  startTimer(30);
 }
 
 var questionCount = 0;
 var timeValue = 30;
 var qNum = 1;
 var userScore = 0;
+var counter;
 
 const restartQuiz = result-box.querySelector(".button .restart");
 const quitQuiz = result-box.querySelector(".button .quit");
@@ -118,6 +128,30 @@ function choicesSelected(answer){
     choices.children[i].classList.add("disabled"); 
   }
   nextBtn.classList.add("show"); // Show the "Next" button when user selected any choices
+}
+
+function showResult() {
+  infoBox.classList.remove("activeInfo"); // Hide info box
+  quizBox.classList.remove("activeQuiz"); // Hide quiz box
+  resultBox.classList.add("activeResult"); // Show result box
+  const scoreText = resultBox.querySelector(".final-score");
+
+  // If user chosen => 3 correct answers
+  if (userScore => 60) {
+    // Create a new span tag and passing the user score values and total question numbers
+    var scoreTag = "<span>and congrats! 🎉, You got <p>"+ userScore + "</p> out of <p>" + questionsArr.length + "</p></span>";
+    scoreText.innerHTML = scoreTag; // Adding new span tag inside score-text
+  } 
+  // If user chosen => 1 correct answer
+  else if (userScore > 20){
+    var scoreTag = "<span>and nice 😎, You got <p>"+ userScore + "</p> out of <p>" + questionsArr.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
+  }
+  // If user have all incorrect answers
+  else {
+    var scoreTag = "<span>and sorry 😐, You got only <p>"+ userScore + "</p> out of <p>" + questionsArr.length + "</p></span>";
+    scoreText.innerHTML = scoreTag;
+  }
 }
 
 function startTimer(time){

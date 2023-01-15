@@ -15,61 +15,45 @@
     <!-- start Quiz button -->
     <div class="start-btn"><button>Start Quiz</button></div>
 
-    <div class="scores"><a href="highscores.html">View Highscores</a></div>
+    <!--<div class="scores"><a href="highscores.html">View Highscores</a></div>
+    <div class="timer">Time: <span id="time">0</span></div>-->
 
-    <div class="timer">Time: <span id="time">0</span></div>
-
-    <div class="wrapper">
-      <div id="start-screen" class="start">
-        <!--info box before start-->
-        <div class="info-box">
-          <div class="info-title"><span>Quiz Rules</span></div>
-          <div class="info-list">
-            <div class="info">
-              1. You will have only <span>30 seconds</span> to complete the quiz.
-            </div>
-            <div class="info">
-              2. There are 5 questions in total.
-            </div>
-            <div class="info">
-              3. You will get 20 points on your correct answer.
-            </div>
-            <div class="info">
-              4. The time will be deducted 3 seconds on every incorrect answer.
-            </div>
-            <div class="info">
-              5. You cannot exit from the quiz while you are playing.
-            </div>
-            <p>
-              GOOD LUCK!
-            </p>
-          </div>
-          <!--Start/Exit button-->
-          <div class="buttons">
-            <button class="quit">Exit Quiz</button>
-            <button class="restart start-btn">Start</button>
-        </div>
-        </div>
+    <!--Info box before start-->
+    <div class="info-box">
+      <div class="info-title"><span>Quiz Rules</span></div>
+      <div class="info-list">
+        <div class="info">1. You will have only <span>30 seconds</span> to complete the quiz.</div>
+        <div class="info">2. There are 5 questions in total.</div>
+        <div class="info">3. You will get 20 points on your correct answer.</div>
+        <div class="info">4. The time will be deducted 3 seconds on every incorrect answer.</div>
+        <div class="info">5. You cannot exit from the quiz while you are playing.</div>
+        <p>GOOD LUCK!</p>
       </div>
+      <!--Start/Exit button-->
+      <div class="buttons">
+        <button class="quit">Exit Quiz</button>
+        <button class="restart">Start</button>
+      </div>
+    </div>
 
-      <!--Quiz Box-->
-      <div class="quiz-box">
-        <header> 
-          <h1 class="title">Javascript Timed Quiz</h1>
-          <div class="timer">
-            <div class="time-text">Time:</div>
-            <div class="timer-sec">30</div>
-          </div>
-        </header>
-        <section>
-          <div id="questions" class="hide question-text">
-            <!--Inserted questions from JS here-->
-            <h2 id="question-title"></h2>
-          </div>
-          <div id="choices" class="choices">
-            <!--Inserted answer choices from JS here-->
-          </div>
-        </section>
+    <!--Quiz Box-->
+    <div class="quiz-box">
+      <header> 
+        <h1 class="title">Javascript Timed Quiz</h1>
+        <div class="timer">
+          <div class="time-text">Time:</div>
+          <div class="timer-sec">30</div>
+        </div>
+      </header>
+      <section>
+        <div class="question-text">
+          <!--Inserted questions from JS here-->
+          <h2 id="question-title"></h2>
+        </div>
+        <div class="choices">
+          <!--Inserted answer choices from JS here-->
+        </div>
+      </section>
 
       <!--Footer of quiz box-->
       <footer>
@@ -80,23 +64,21 @@
       </footer>
     </div>
 
-      <!--Result Box-->
-      <div id="end-screen" class="result-box">
-        <h2 class="complete-text">You've completed the Quiz!</h2>
-        <p>Your final score is <span id="final-score">
-          <!--Inserted Score Result from JS here-->
-        </span>.</p>
+    <!--Result Box-->
+    <div id="end-screen" class="result-box">
+      <h2 class="complete-text">You've completed the Quiz!</h2>
+      <p>Your final score is <span id="final-score">
+        <!--Inserted Score Result from JS here-->
+      </span>.</p>
 
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button class="submit">Submit</button>
-        </p>
-      </div>
-
-      <div id="feedback" class="feedback hide"></div>
+      <p>
+        Enter initials: <input type="text" id="initials" max="3" />
+        <button class="submit">Submit</button>
+      </p>
     </div>
 
-    <script src="js/script.js"></script>
+    <div id="feedback" class="feedback hide"></div>
+
     <!--Inside questions.js contained Questions and Answer choices only-->
     <script src="js/quesions.js"></script>
     <!--Inside logic.js contained all Quiz code-->
