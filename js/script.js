@@ -14,16 +14,16 @@ startBtn.onclick = ()=>{
   infoBox.classList.add('activeInfo'); // Show info box
 }
 
-// If continus quiz button clicked
+// If start quiz button clicked
 continueBtn.onclick = () => {
-  infoBox.classList.remove('activeInfo');
-  quizBox.classList.add('activeQuiz');
+  infoBox.classList.remove('activeInfo'); // Hide info box
+  quizBox.classList.add('activeQuiz'); // Show quiz box
   displayQuestion(0);
   queCounter(1);
   startTimer(30);
 }
 
-var questionCount = 0;
+var queCount = 0;
 var timeValue = 30;
 var queNum = 1;
 var userScore = 0;
@@ -35,11 +35,11 @@ const restartQuiz = resultBox.querySelector('.button .restart');
 restartQuiz.onclick = ()=>{
   quizBox.classList.add('activeQuiz'); // Show quiz box
   resultBox.classList.remove('activeResult'); // Hide result box
-  questionCount = 0;
+  queCount = 0;
   timeValue = 30;
   queNum = 1;
   userScore = 0;
-  displayQuestion(questionCount); // Call displayQuestion function
+  displayQuestion(queCount); // Call displayQuestion function
   queCounter(queNum); // Passing question number value to queCounter
   startTimer(timeValue); // Call startTimer function
   clearInterval(counter); // Clear counter
@@ -51,12 +51,12 @@ const nextBtn = document.querySelector('footer .next-btn');
 const bottomQueCounter = document.querySelector('footer .total-que');
 
 // When 'Next' button clicked
-nextBtn.onclick = ()=> {
+/*nextBtn.onclick = ()=> {
   // If question count is less than total question length
-  if(questionCount < questionsArr.length -1){
-    questionCount++; // Increment the questionCount value
+  if(queCount < questionsArr.length -1){
+    queCount++; // Increment the queCount value
     queNum++; // Increment the question number value
-    displayQuestion(questionCount); 
+    displayQuestion(queCount); 
     queCounter(queNum);
     startTimer(timeValue);
     clearInterval(counter);
@@ -67,12 +67,11 @@ nextBtn.onclick = ()=> {
     clearInterval(counter);
     showResult();
   }
-}
+}*/
 
 // Getting questions and choices for array
 function displayQuestion(i) {
   const questionText = document.querySelector('.question-text');
-  const choices = document.querySelector('.choices-list');
 
   // Creaing a new span and div tags for questions and choices and passing the value using array index
   var queTag = '<span>' + questionsArr[i].queNum + '. ' + questionsArr[i].question + '</span>';
@@ -83,7 +82,7 @@ function displayQuestion(i) {
   '<div class="option"><span>' + questionsArr[i].choices[3] + '</span></div>';
 
   questionText.innerHTML = queTag; // Adding new span tag inside question tag
-  choices.innerHTML = choicesTag; // Adding new div tag inside choice tag //! need fix
+  choices.innerHTML = choicesTag; // Adding new div tag inside choice tag
 
   const option = choices.querySelectorAll('.option');
   // Set onclick attribute to all available choices
@@ -100,7 +99,7 @@ let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 function choicesSelected(answer){
   clearInterval(counter);
   var userAnswer = answer.textContent; // User selected answer
-  var correctAnswer = questionsArr[questionCount].answer; // Getting correct answer from array
+  var correctAnswer = questionsArr[queCount].answer; // Getting correct answer from array
   const allChoices = choices.children.length; // Getting all choices values
 
   if(userAnswer == correctAnswer){
@@ -128,6 +127,9 @@ function choicesSelected(answer){
   nextBtn.classList.add('show'); // Show the 'Next' button when user selected any choices
 }
 
+
+
+/*
 function showResult() {
   infoBox.classList.remove('activeInfo'); // Hide info box
   quizBox.classList.remove('activeQuiz'); // Hide quiz box
@@ -168,7 +170,7 @@ function startTimer(time){
       clearInterval(counter); // Clear counter
       timeText.textContent = 'Time Out'; // Change time text to time out
       const allChoices = choices.children.length; // Getting all choices
-      var correctAnswer = questionsArr[queNum].answer; // Getting correct answer from array
+      var correctAnswer = questionsArr[queCount].answer; // Getting correct answer from array
       for (i = 0; i < allChoices; i++){
         // If there is an option matched an array answer
         if(choices.children[i].textContent == correctAnswer){
@@ -189,4 +191,4 @@ function queCounter(i){
   // Create a new span tag and passing the question number and total question
   var totalQueCount = '<span><p>' + i + '</p> of <p>' + questionsArr.length + '</p> Questions</span>';
   bottomQueCounter.innerHTML = totalQueCount; // Adding new span tag inside bottomQueCounter
-}
+}*/

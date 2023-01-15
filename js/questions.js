@@ -50,7 +50,7 @@ var questionsArr = [
 
   // Question 5
   { queNum: 5,
-    question: 'How do you round the number 7.25, to the nearest integer?',
+    question: 'How do you round the number 7.25 to the nearest integer?',
     choices: [
       'Math.round(7.25)', 
       'Math.rnd(7.25)', 
