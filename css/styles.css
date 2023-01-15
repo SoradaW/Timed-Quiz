@@ -1,9 +1,10 @@
-body {
-  font-family: 'Chivo', sans-serif;
-  font-size: 120%;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Chivo', sans-serif;
+}
+body {
   background-color: #ded4ecdb;
 }
 ::selection {
