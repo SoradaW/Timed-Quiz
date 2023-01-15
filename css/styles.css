@@ -149,13 +149,6 @@ body {
   border: 1px solid #343a40;
   user-select: none;
 }
-/*.quiz-box header .time-line{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  height: 3px;
-  background: #007bff;
-}*/
 section{
   padding: 25px 30px 20px 30px;
   background: #fff;
@@ -202,8 +195,7 @@ section .choices .option.incorrect{
 section .choices .option.disabled{
   pointer-events: none;
 }
-/*
-section .choices .option .icon{
+section .choices .option {
   height: 26px;
   width: 26px;
   border: 2px solid transparent;
@@ -214,17 +206,16 @@ section .choices .option .icon{
   transition: all 0.3s ease;
   line-height: 24px;
 }
-
-.choices .option .icon.tick{
+.choices .option {
   color: #23903c;
   border-color: #23903c;
   background: #d4edda;
 }
-.choices .option .icon.cross{
+.choices .option {
   color: #a42834;
   background: #f8d7da;
   border-color: #a42834;
-}*/
+}
 footer{
   height: 60px;
   padding: 0 30px;
@@ -327,15 +318,6 @@ footer button.show{
 .buttons button.submit:hover{
   background: #0263ca;
 }
-/*
-.buttons button.quit{
-  color: #007bff;
-  background: #fff;
-}
-.buttons button.quit:hover{
-  color: #fff;
-  background: #007bff;
-}*/
 
 
 

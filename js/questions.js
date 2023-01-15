@@ -3,7 +3,12 @@ var questionsArr = [
   // Question 1
   { qNum: 1,
     question: "Inside which HTML element do we put the JavaScript",
-    choices: ["<js>","<scripting>","<javascript>","<script>"],
+    choices: [
+      "<js>",
+      "<scripting>",
+      "<javascript>",
+      "<script>"
+    ],
     answer: "<script>",
   },
 

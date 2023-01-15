@@ -1,5 +1,34 @@
 // Selecting all queries elements
+const startButton = document.querySelector(".start-btn button");
+const infoBox = document.querySelector(".info-box");
+const continueBtn = infoBox.querySelector(".buttons .restart");
+const quizBox = document.querySelector(".quiz-box");
+const resultBox = document.querySelector(".result-box");
+const choices = document.querySelector(".choices");
+const timeText = document.querySelector(".timer .time-text");
+const timeCount = document.querySelector(".timer .timer-sec");
 
+// If startQuiz button clicked
+startButton.onclick = ()=>{
+  infoBox.classList.add("activeInfo"); // Show info box
+}
+
+// If continus quiz button clicked
+continueBtn.onclick = () => {
+  infoBox.classList.remove("activeInfo");
+  quizBox.classList.add("activeQuiz");
+  displayQuestion(0);
+  questionCounter(1);
+  startTimer(30);
+}
+
+var questionCount = 0;
+var timeValue = 30;
+var qNum = 1;
+var userScore = 0;
+var counter;
+
+const restartQuiz = resultBox.querySelector(".button .restart");
 
 // When restartQuiz button clicked
 restartQuiz.onclick = ()=>{
@@ -12,13 +41,9 @@ restartQuiz.onclick = ()=>{
   displayQuestion(questionCount); // Call displayQuestion function
   questionCounter(qNum); // Passing question number value to questionCounter
   startTimer(timeValue); // Call startTimer function
+  clearInterval(counter); // Clear counter
   timeText.textContent = "Time Left"; // Change the text of timeText to Time Left
-  next-exitBtn.classList.remove("show"); // Hide the "Next" button
-}
-
-// If quitQuiz button clicked
-quitQuiz.onclick = ()=> {
-  window.location.reload(); // Reload the current window
+  nextBtn.classList.remove("show"); // Hide the "Next" button
 }
 
 const nextBtn = document.querySelector("footer .next-btn");
@@ -27,14 +52,19 @@ const bottomQueCounter = document.querySelector("footer .total-que");
 // When "Next" button clicked
 nextBtn.onclick = ()=> {
   // If question count is less than total question length
-  if(questionCount < questions.length -1){
+  if(questionCount < questionsArr.length -1){
     questionCount++; // Increment the questionCount value
     qNum++; // Increment the question number value
     displayQuestion(questionCount); 
     questionCounter(qNum);
-    startTimer(timeValue);timeText.textContent = "Time Left";
-    next-exitBtn.classList.remove("show");
+    startTimer(timeValue);
+    clearInterval(counter);
+    timeText.textContent = "Time Left";
+    nextBtn.classList.remove("show");
     showResult(); // Call showResult function
+  } else {
+    clearInterval(counter);
+    showResult();
   }
 }
 
@@ -42,26 +72,28 @@ nextBtn.onclick = ()=> {
 function displayQuestion(i) {
   const questionText = document.querySelector(".question-text")
   // Creaing a new span and div tags for questions and choices and passing the value using array index
-  var questionTag = "<span>" + questionsArr[i].qNum + questionsArr[i].question + "</span>";
+  var questionTag = "<span>" + questionsArr[i].qNum + ". " + questionsArr[i].question + "</span>";
   var choicesTag = 
-  "<div class="option"><span>" + questions[i].choices[0] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].choices[1] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].choices[2] + "</span></div>" +
-  "<div class="option"><span>" + questions[i].choices[3] + "</span></div>" ;
+  '<div class="option"><span>' + questionsArr[i].choices[0] + '</span></div>' +
+  '<div class="option"><span>' + questionsArr[i].choices[1] + '</span></div>' +
+  '<div class="option"><span>' + questionsArr[i].choices[2] + '</span></div>' +
+  '<div class="option"><span>' + questionsArr[i].choices[3] + '</span></div>' ;
+
   questionText.innerHTML = questionTag; // Adding new span tag inside question tag
   choices.innerHTML = choicesTag; // Adding new div tag inside choice tag
 
-  const option = choices.querySelectorAll(".choices");
+  const option = choices.querySelectorAll(".option");
   // Set onclick attribute to all available choices
-  for (i = 0; i < choices.length; i++){
-    choices[i].setAttribute("onclick", "choicesSelected(this)");
+  for (i = 0; i < option.length; i++){
+    option[i].setAttribute("onclick", "optionSelected(this)");
   }
 }
 
 // Create function when user clicked/chosen choices
 function choicesSelected(answer){
+  clearInterval(counter);
   var userAnswer = answer.textContent; // User selected answer
-  var correctAnswer = questions[questionCount].answer; // Getting correct answer from array
+  var correctAnswer = questionsArr[questionCount].answer; // Getting correct answer from array
   const allChoices = choices.children.length; // Getting all choices values
 
   if(userAnswer == correctAnswer){
@@ -76,7 +108,7 @@ function choicesSelected(answer){
     // If there is an option which is matched to an array answer
     for (i = 0; i < allChoices; i++){
       if(choices.children[i].textContent == correctAnswer){ 
-        choices.children[i].setAttribute("class", "choice correct"); // Adding green color to macthed option
+        choices.children[i].setAttribute("class", "option correct"); // Adding green color to macthed option
         console.log("Auto selected correct answer.");
       }
     }
@@ -95,13 +127,13 @@ function showResult() {
   const scoreText = resultBox.querySelector(".final-score");
 
   // If user chosen => 3 correct answers
-  if (userScore => 60) {
+  if (userScore >= 60) {
     // Create a new span tag and passing the user score values and total question numbers
     var scoreTag = "<span>and congrats! 🎉, You got <p>"+ userScore + "</p> out of <p>" + questionsArr.length + "</p></span>";
     scoreText.innerHTML = scoreTag; // Adding new span tag inside score-text
   } 
   // If user chosen => 1 correct answer
-  else if (userScore > 20){
+  else if (userScore >= 20){
     var scoreTag = "<span>and nice 😎, You got <p>"+ userScore + "</p> out of <p>" + questionsArr.length + "</p></span>";
     scoreText.innerHTML = scoreTag;
   }
@@ -120,8 +152,8 @@ function startTimer(time){
     time--; // Decrement the time value
     // If timer is les than 9
     if(time < 9){
-    var addZero = timeCount.textContent;
-    timeCount.textContent = "0" + addZero; // Add 0 infront time value
+      var addZero = timeCount.textContent;
+      timeCount.textContent = "0" + addZero; // Add 0 infront time value
     }
     // If timer is les than 0
     if(time < 0){
@@ -132,7 +164,7 @@ function startTimer(time){
       for (i = 0; i < allChoices; i++){
         // If there is an option matched an array answer
         if(choices.children[i].textContent == correctAnswer){
-          choices.children[i].setAttribute("class", "choice correct"); // Adding green color to matched option
+          choices.children[i].setAttribute("class", "option correct"); // Adding green color to matched option
           console.log("Time Out: Auto selected correct answer.");
         }
       }

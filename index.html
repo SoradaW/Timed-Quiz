@@ -13,7 +13,7 @@
 
   <body>
     <!-- start Quiz button -->
-    <div id="start" class="start-btn"><button>Start Quiz</button></div>
+    <div class="start-btn"><button>Start Code Quiz</button></div>
 
     <!--<div class="scores"><a href="highscores.html">View Highscores</a></div>
     <div class="timer">Time: <span id="time">0</span></div>-->
@@ -22,17 +22,18 @@
     <div class="info-box">
       <div class="info-title"><span>Quiz Rules</span></div>
       <div class="info-list">
-        <div class="info">1. You will have only <span>30 seconds</span> to complete the quiz.</div>
-        <div class="info">2. There are 5 questions in total.</div>
-        <div class="info">3. You will get 20 points on your correct answer.</div>
-        <div class="info">4. The time will be deducted 3 seconds on every incorrect answer.</div>
-        <div class="info">5. You cannot exit from the quiz while you are playing.</div>
-        <p>GOOD LUCK!</p>
+        <div class="info">
+          <li>You will have only <span>30 seconds</span> to complete the quiz.</li>
+          <li>There are 5 questions in total.</li>
+          <li>You will get 20 points on your correct answer.</li>
+          <li>The time will be deducted 3 seconds on incorrect answer.</li>
+          <li>You cannot exit from the quiz while you are playing.</li>
+        </div>
       </div>
       <!--Start/Exit button-->
       <div class="buttons">
-        <button class="quit">Exit Quiz</button>
-        <button class="restart">Start</button>
+        <p>GOOD LUCK!</p>
+        <button class="restart">Continue</button>
       </div>
     </div>
 
@@ -48,7 +49,6 @@
       <section>
         <div class="question-text">
           <!--Inserted questions from JS here-->
-          <h2 id="question-title"></h2>
         </div>
         <div class="choices">
           <!--Inserted answer choices from JS here-->
@@ -82,6 +82,7 @@
     <!--Inside questions.js contained Questions and Answer choices only-->
     <script src="js/quesions.js"></script>
     <!--Inside logic.js contained all Quiz code-->
-    <script src="js/logic.js"></script>
+    <script src="js/script.js"></script>
+    <script src="//js/logic.js"></script>
   </body>
 </html>
