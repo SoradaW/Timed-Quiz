@@ -83,11 +83,23 @@ function displayQuestion(i) {
   choices.innerHTML = choicesTag; // Adding new div tag inside choice tag
 
   const option = choices.querySelectorAll(".option");
+
+
+  
   // Set onclick attribute to all available choices
   for (i = 0; i < option.length; i++){
-    option[i].setAttribute("onclick", "optionSelected(this)");
+    option[i].setAttribute("onclick", "choicesSelected(this)");
   }
 }
+
+
+
+
+
+
+
+
+
 
 // Create function when user clicked/chosen choices
 function choicesSelected(answer){

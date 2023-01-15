@@ -195,7 +195,8 @@ section .choices .option.incorrect{
 section .choices .option.disabled{
   pointer-events: none;
 }
-section .choices .option {
+/*
+section .choices .option .icon{
   height: 26px;
   width: 26px;
   border: 2px solid transparent;
@@ -206,16 +207,18 @@ section .choices .option {
   transition: all 0.3s ease;
   line-height: 24px;
 }
-.choices .option {
+
+.choices .option .icon.tick{
   color: #23903c;
   border-color: #23903c;
   background: #d4edda;
 }
-.choices .option {
+.choices .option .icon.cross{
   color: #a42834;
   background: #f8d7da;
   border-color: #a42834;
-}
+}*/
+
 footer{
   height: 60px;
   padding: 0 30px;
