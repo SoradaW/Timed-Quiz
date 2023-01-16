@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <!-- start Quiz button -->
+    <!-- Start Quiz button -->
     <div class="start-btn"><button>JavaScript Quiz</button></div>
 
     <!--<div class="scores"><a href="highscores.html">View Highscores</a></div>
@@ -33,8 +33,8 @@
           <li>You cannot exit from the quiz while you are playing.</li>
         </div>
       </div>
-      <!--Start/Exit button-->
       <div class="buttons">
+        <button class="quit">Exit Quiz</button>
         <button class="restart">Start</button>
       </div>
     </div>
@@ -67,19 +67,17 @@
     </div>
 
     <!--Result Box-->
-    <div id="end-screen" class="result-box">
-      <h2 class="complete-text">You've completed the Quiz!</h2>
-      <p>Your final score is <span id="final-score">
+    <div class="result-box">
+      <div class="complete-text">You've completed the Quiz!</div>
+      <div class="final-score">
         <!--Inserted Score Result from JS here-->
-      </span>.</p>
+      </div>
 
-      <p>
-        Enter initials: <input type="text" id="initials" max="3" />
-        <button class="submit">Submit</button>
-      </p>
+      <div class="buttons">
+        <button class="restart">Replay Quiz</button>
+        <button class="quit">Quit Quiz</button>
+      </div>
     </div>
-
-    <div id="feedback" class="feedback hide"></div>
 
     <!--Inside questions.js contained Questions and Answer choices only-->
     <script src="js/questions.js"></script>

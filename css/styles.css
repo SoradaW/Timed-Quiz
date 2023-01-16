@@ -314,12 +314,23 @@ footer button.show{
   border: 1px solid #007bff;
   transition: all 0.3s ease;
 }
-.buttons button.submit{
+.buttons button.restart{
   color: #fff;
   background: #007bff;
 }
-.buttons button.submit:hover{
+
+.buttons button.restart:hover{
   background: #0263ca;
+}
+
+.buttons button.quit{
+  color: #007bff;
+  background: #fff;
+}
+
+.buttons button.quit:hover{
+  color: #fff;
+  background: #007bff;
 }
 
 

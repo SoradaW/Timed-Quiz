@@ -150,3 +150,44 @@ function questionCounter(i){
   var totalQueCount = "<span><p>" + i + "</p> of <p>" + questions.length + "</p> Questions</span>";
   bottomQueCounter.innerHTML = totalQueCount; // Adding new span tag inside bottomQueCounter
 }
+
+
+
+// creating the new div tags which for icons
+var tickIconTag = '<div class="icon tick"><i class="fa fa-check"></i></div>';//!
+var crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';//!
+
+// Create function when user clicked/chosen choices
+function choicesSelected(answer){
+  clearInterval(counter);
+  var userAnswer = answer.textContent; // User selected answer
+  var correctAnswer = questionsArr[queCount].answer; // Getting correct answer from array
+  const allChoices = choices.children.length; // Getting all choices values
+
+  if(userAnswer == correctAnswer){
+    // If user chosen correct answer +20 points
+    userScore += 20; // Adding score values 
+    answer.classList.add("correct"); // Adding green color to correct option using.classList.add 
+    answer.insertAdjacentHTML("beforeend", tickIconTag); // Adding tick icon to correct selected option
+    console.log("Correct Answer");
+    console.log("Your correct answer = " + userScore);
+  } else {
+    answer.classList.add("incorrect"); // Adding red color to correct option using.classList.add 
+    answer.insertAdjacentHTML("beforeend", crossIconTag); // Adding cross icon to correct selected option
+    console.log("Wrong Answer");
+    // If there is an option which is matched to an array answer
+    for (i = 0; i < allChoices; i++){
+      if(choices.children[i].textContent == correctAnswer){ 
+        choices.children[i].setAttribute("class", "option correct"); // Adding green color to macthed option
+        option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); // Adding tick icon to matched option
+        console.log("Auto selected correct answer.");
+      }
+    }
+  }
+  // Once user select their choice then disabled all choices
+  for (i = 0; i < allChoices; i++){
+    choices.children[i].classList.add("disabled"); 
+  }
+  nextBtn.classList.add("show"); // Show the "Next" button when user selected any choices
+}
+
