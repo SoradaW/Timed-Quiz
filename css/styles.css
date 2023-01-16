@@ -11,6 +11,10 @@ body {
   color: #fff;
   background: #563d7c;
 }
+h1 {
+  text-align: center;
+  margin: 5%;
+}
 .start-btn,
 .info-box,
 .quiz-box,
