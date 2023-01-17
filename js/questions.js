@@ -1,9 +1,9 @@
 // Creating an array and passing the number, questions, options, and answers
-var questionsArr = [
+var questions = [
   // Question 1
   { queNum: 1,
     question: 'How do you write "Hello World" in an alert box?',
-    choices: [
+    options: [
       'msgBox("Hello World");',
       'alert("Hello World");',
       'msg("Hello World");',
@@ -15,7 +15,7 @@ var questionsArr = [
   // Question 2
   { queNum: 2,
     question: 'What is the correct way to write a JavaScript array?',
-    choices: [
+    options: [
       'var colors = (1:"red", 2:"green", 3:"blue")', 
       'var colors = ["red", "green", "blue"]', 
       'var colors = "red", "green", "blue"', 
@@ -27,7 +27,7 @@ var questionsArr = [
   // Question 3
   { queNum: 3,
     question: 'How to write an IF statement in JavaScript?',
-    choices: [
+    options: [
       'if (i == 5)', 
       'if i = 5', 
       'if i = 5 then', 
@@ -39,7 +39,7 @@ var questionsArr = [
   // Question 4
   { queNum: 4,
     question: 'How does a FOR loop start?',
-    choices: [
+    options: [
       'for (i = 0; i <= 5; i++)', 
       'for (i = 1 to 5)', 
       'for (i = 0; i <= 5)', 
@@ -51,7 +51,7 @@ var questionsArr = [
   // Question 5
   { queNum: 5,
     question: 'How do you round the number 7.25 to the nearest integer?',
-    choices: [
+    options: [
       'Math.round(7.25)', 
       'Math.rnd(7.25)', 
       'round(7.25)', 
