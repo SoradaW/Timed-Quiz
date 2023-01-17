@@ -21,7 +21,7 @@ A timed coding quiz with multiple-choice questions. This app will run in the bro
 
 The following animation demonstrates the application functionality:
 
-![Animation of code quiz.](sfx/JavaScriptQuiz.webm/GIF)
+![Animation of code quiz.][JavaScriptQuiz.webm](https://user-images.githubusercontent.com/93084381/213023864-35e22d0f-2502-4e78-909a-87b73016dfb8.webm)
 
 ## Link to deployed application
 
@@ -29,3 +29,4 @@ https://soradaw.github.io/Timed-Quiz/
 
 ---
 © 2023 || Sorada Wright || All Rights Reserved.
+
