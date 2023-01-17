@@ -21,7 +21,11 @@ A timed coding quiz with multiple-choice questions. This app will run in the bro
 
 The following animation demonstrates the application functionality:
 
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](sfx/JavaScriptQuiz.webm)
+![Animation of code quiz.](sfx/JavaScriptQuiz.webm/GIF)
+
+## Link to deployed application
+
+https://soradaw.github.io/Timed-Quiz/
 
 ---
 © 2023 || Sorada Wright || All Rights Reserved.
