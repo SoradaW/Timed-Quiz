@@ -1,14 +1,14 @@
 // Selecting all queries elements
-const startBtn = document.querySelector(".start-btn button");
-const infoBox = document.querySelector(".info-box");
-const exitBtn = document.querySelector(".buttons .quit");
-const quizBox = document.querySelector(".quiz-box");
-const resultBox = document.querySelector(".result-box");
-const choices = document.querySelector(".choices-list");
-const timeText = document.querySelector(".timer .time-text");
-const timeCount = document.querySelector(".timer .timer-sec");
-const nextBtn = document.querySelector("footer .next-btn");
-const bottomQueCounter = document.querySelector("footer .total-que");
+const startBtn = document.querySelector(".start_btn button");
+const infoBox = document.querySelector(".info_box");
+const exitBtn = infoBox.querySelector(".buttons .quit");
+const quizBox = document.querySelector(".quiz_box");
+const resultBox = document.querySelector(".result_box");
+const choices = document.querySelector(".option_list");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+const nextBtn = document.querySelector("footer .next_btn");
+const bottomQueCounter = document.querySelector("footer .total_que");
 const continueBtn = infoBox.querySelector(".buttons .restart");
 
 // If startQuiz button clicked
@@ -59,27 +59,9 @@ quitQuiz.onclick = function(){
   window.location.reload(); // Reload the current window
 }
 
-// When "Next" button clicked
-nextBtn.onclick = function(){
-  // If question count is less than total question length
-  if(queCount < questionsArr.length -1){
-    queCount++; // Increment the queCount value
-    queNum++; // Increment the question number value
-    displayQuestion(queCount); 
-    queCounter(queNum);
-    startTimer(timeValue);
-    clearInterval(counter);
-    timeText.textContent = "Time Left";
-    nextBtn.classList.remove("show");
-  } else {
-    clearInterval(counter); // Clear counter
-    showResult(); // Call showResult function
-  }
-}
-
 // Getting questions and choices for array
 function displayQuestion(i){
-  const questionText = document.querySelector(".question-text");
+  const questionText = document.querySelector(".que_text");
 
   // Creaing a new span and div tags for questions and choices and passing the value using array index
   var queTag = '<span>' + questionsArr[i].queNum + ". " + questionsArr[i].question + '</span>';
@@ -96,6 +78,24 @@ function displayQuestion(i){
   // Set onclick attribute to all available choices
   for (i = 0; i < option.length; i++){
     option[i].setAttribute("onclick", "choicesSelected(this)");
+  }
+}
+
+// When "Next" button clicked
+nextBtn.onclick = function(){
+  // If question count is less than total question length
+  if(queCount < questionsArr.length -1){
+    queCount++; // Increment the queCount value
+    queNum++; // Increment the question number value
+    displayQuestion(queCount); 
+    queCounter(queNum);
+    startTimer(timeValue);
+    clearInterval(counter);
+    timeText.textContent = "Time Left";
+    nextBtn.classList.remove("show");
+  } else {
+    clearInterval(counter); // Clear counter
+    showResult(); // Call showResult function
   }
 }
 
@@ -137,7 +137,7 @@ function showResult() {
   infoBox.classList.remove("activeInfo"); // Hide info box
   quizBox.classList.remove("activeQuiz"); // Hide quiz box
   resultBox.classList.add("activeResult"); // Show result box
-  const scoreText = resultBox.querySelector(".final-score");
+  const scoreText = resultBox.querySelector(".score_text");
 
   // If user chosen => 3 correct answers
   if (userScore > 3) {
