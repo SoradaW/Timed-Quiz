@@ -52,10 +52,10 @@ var questions = [
   { queNum: 5,
     question: 'How do you round the number 7.25 to the nearest integer?',
     options: [
-      'Math.round(7.25)', 
+      'decimal(7.25)',
       'Math.rnd(7.25)', 
-      'round(7.25)', 
-      'decimal(7.25)'
+      'round(7.25)',
+      'Math.round(7.25)'
     ],
     answer: 'Math.round(7.25)',
   },
