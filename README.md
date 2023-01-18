@@ -15,13 +15,13 @@ A timed coding quiz with multiple-choice questions. This app will run in the bro
   -  Each time you answer incorrectly, the app will be automatically select the correct answer and time will be stop.
   - If the time runs out before you can answer, the app will be automatically select the correct answer for you.
 
-* Once the quiz is finished, you will be brought to the scores window where you can see your.
+* Once the quiz is finished, you will be brought to the scores window where you can see your score.
 
 ## Mock-Up
 
 The following animation demonstrates the application functionality:
 
-![Animation of code quiz.](sfx/JavaScriptQuiz.webm/GIF)
+[JavaScriptQuiz.webm](https://user-images.githubusercontent.com/93084381/213023864-35e22d0f-2502-4e78-909a-87b73016dfb8.webm)
 
 ## Link to deployed application
 

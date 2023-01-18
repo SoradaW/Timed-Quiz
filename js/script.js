@@ -101,7 +101,12 @@ function showQuetions(i){
     }
 }
 
+//adding sounds
+const audioCorrect = document.createElement("audio");
+audioCorrect.setAttribute("src", "sfx/correct.wav");
 
+const audioInCorrect = document.createElement("audio");
+audioInCorrect.setAttribute("src", "sfx/incorrect.wav");
 
 //if user clicked on option
 function optionSelected(answer){
@@ -114,11 +119,13 @@ function optionSelected(answer){
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", "✔"); //adding tick icon to correct selected option
+        audioCorrect.play(); //adding correct sound answer
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", "✖"); //adding cross icon to correct selected option
+        audioInCorrect.play(); //adding incorrect sound answer
         console.log("Wrong Answer");
 
         for(i=0; i < allOptions; i++){
@@ -189,3 +196,4 @@ function queCounter(i){
     let totalQueCounTag = '<span><p>'+ i +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottomQuesCounter.innerHTML = totalQueCounTag;  //adding new span tag inside bottomQuesCounter
 }
+
