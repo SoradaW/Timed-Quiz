@@ -27,6 +27,9 @@ The following animation demonstrates the application functionality:
 
 https://soradaw.github.io/Timed-Quiz/
 
+## Credits
+* CodingNepal
+* W3Schools
 ---
 © 2023 || Sorada Wright || All Rights Reserved.
 
